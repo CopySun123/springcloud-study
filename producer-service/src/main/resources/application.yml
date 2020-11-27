@@ -1,0 +1,26 @@
+server:
+  port: 8100
+
+spring:
+  application:
+    name: producer-service
+  rabbitmq:
+    username: guest
+    password: guest
+    host: localhost
+    port: 5672
+  cloud:
+    stream:
+      bindings:
+        output:
+          destination: sendChannel
+        input:
+          destination: ackChannel
+
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8300/eureka
+
+

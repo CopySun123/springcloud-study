@@ -1,0 +1,35 @@
+server:
+  port: 8200
+spring:
+  application:
+    name: concumer-service
+  rabbitmq:
+    username: guest
+    password: guest
+    host: localhost
+    port: 5672
+  cloud:
+    stream:
+      rabbit:
+        bindings:
+          input:
+            #消费者配置
+            consumer:
+              #应答模式
+              acknowledgeMode: manual
+              #指定该主题的类型为广播模式
+#              exchangeType: fanout
+              #消费失败的消息放入dlq队列
+              autoBindDlq: true
+              republishToDlq: true
+      bindings:
+        input:
+          destination: sendChannel
+          group: receive-group1
+        output:
+          destination: ackChannel
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8300/eureka

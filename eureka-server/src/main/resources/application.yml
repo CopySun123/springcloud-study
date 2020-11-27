@@ -1,0 +1,19 @@
+server:
+  port: 8300
+
+eureka:
+  instance:
+    hostname: localhost
+    lease-expiration-duration-in-seconds: 10
+    lease-renewal-interval-in-seconds: 5
+  client:
+    registerWithEureka: false
+    fetchRegistry: false
+    registry-fetch-interval-seconds: 5
+    serviceUrl:
+      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
+  server:
+    response-cache-auto-expiration-in-seconds: 5
+    eviction-interval-timer-in-ms: 5000
+    enable-self-preservation: false
+    use-read-only-response-cache: false
