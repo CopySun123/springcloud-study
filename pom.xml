@@ -22,6 +22,7 @@
         <module>consumer-service</module>
         <module>eureka-server</module>
         <module>producer-service</module>
+        <module>gateway</module>
     </modules>
 
     <build>
