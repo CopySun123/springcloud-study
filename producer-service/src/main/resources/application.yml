@@ -4,20 +4,23 @@ server:
 spring:
   application:
     name: producer-service
+
   rabbitmq:
     username: guest
     password: guest
     host: localhost
     port: 5672
+
   cloud:
     stream:
+      #将交换机和队列绑定到了通道output上面
       bindings:
         output:
           destination: sendChannel
-        input:
-          destination: ackChannel
-
-
+          group: queue-1
+#          binder: rabbit
+#        input:
+#          destination: ackChannel
 eureka:
   client:
     serviceUrl:

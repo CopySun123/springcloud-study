@@ -3,8 +3,18 @@ server:
 spring:
   application:
     name: gateway
-
-
+#  cloud:
+#    gateway:
+#      discovery:
+#        locator:
+#          enabled: true
+#      routes:
+#        - id: product_router
+#          uri: lb://producer-service
+#          predicates:
+#            - Path= /producer-service/**
+#          filters:
+#            - StripPrefix=1
 eureka:
   client:
     serviceUrl:

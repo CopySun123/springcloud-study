@@ -1,4 +1,4 @@
-package com.copysunopenfeign.producerservice.controller;
+package com.copysun.producer.producerservice.controller;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
