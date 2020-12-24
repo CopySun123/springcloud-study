@@ -23,6 +23,7 @@
         <module>eureka-server</module>
         <module>producer-service</module>
         <module>gateway</module>
+        <module>camunda</module>
     </modules>
 
     <build>

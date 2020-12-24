@@ -8,7 +8,6 @@ import org.springframework.cache.annotation.CacheEvict;
 import org.springframework.cache.annotation.CachePut;
 import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
-import org.springframework.web.servlet.DispatcherServlet;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -42,7 +41,6 @@ public class UserEntityService extends ServiceImpl<UserEntityMapper, UserEntity>
      */
     @Cacheable(cacheNames = "userServiceCache", key = "'user:'+#userId")
     public UserEntity getUser(String userId) {
-        DispatcherServlet
         UserEntity userEntity = this.getById(userId);
         return userEntity;
     }

@@ -11,7 +11,7 @@ eureka:
     fetchRegistry: false
     registry-fetch-interval-seconds: 5
     serviceUrl:
-      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
+      defaultZone: http://${eureka.instance.hostname}:8300/eureka/
   server:
     response-cache-auto-expiration-in-seconds: 5
     eviction-interval-timer-in-ms: 5000

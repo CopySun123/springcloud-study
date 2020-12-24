@@ -1,0 +1,37 @@
+server:
+  port: 8400
+spring:
+  application:
+    name: cumunda-service
+  jackson:
+    property-naming-strategy: CAMEL_CASE_TO_LOWER_CASE_WITH_UNDERSCORES  #驼峰转下划线
+  datasource:
+    url: jdbc:mysql://192.168.1.22:3306/test1130?useUnicode=true&autoReconnect=true&failOverReadOnly=false&characterEncoding=utf-8&useSSL=false&serverTimezone=Asia/Shanghai
+    username: root
+    password: 123456
+    driver-class-name: com.mysql.jdbc.Driver
+    type: com.alibaba.druid.pool.DruidDataSource
+camunda:
+  bpm:
+#    admin-user:
+#      id: admin
+#      password: admin
+#      firstName: admin
+    filter:
+      create: All tasks
+    job-execution:
+      enabled: true
+    metrics:
+      enabled: false
+      db-reporter-activate: false
+    auto-deployment-enabled: false
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8300/eureka
+
+logging:
+  level:
+    org:
+      camunda: debug
