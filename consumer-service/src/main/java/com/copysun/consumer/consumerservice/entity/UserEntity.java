@@ -3,6 +3,7 @@ package com.copysun.consumer.consumerservice.entity;
 import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableName;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import java.io.Serializable;
 
@@ -13,6 +14,7 @@ import java.io.Serializable;
  */
 @Data
 @TableName(value = "`user`")
+@NoArgsConstructor
 public class UserEntity extends BaseEntity implements Serializable {
     private static final long serialVersionUID = -3218090418254758863L;
 

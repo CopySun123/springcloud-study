@@ -11,19 +11,12 @@ spring:
     password: 123456
     driver-class-name: com.mysql.jdbc.Driver
     type: com.alibaba.druid.pool.DruidDataSource
-camunda:
-  bpm:
-#    admin-user:
-#      id: admin
-#      password: admin
-#      firstName: admin
-    filter:
-      create: All tasks
-    job-execution:
-      enabled: true
-    metrics:
-      enabled: false
-      db-reporter-activate: false
+camunda.bpm:
+  webapp:
+    index-redirect-enabled: true
+  admin-user:
+    id: admin
+    password: admin
     auto-deployment-enabled: false
 
 eureka:

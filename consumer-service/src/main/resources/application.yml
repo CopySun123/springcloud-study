@@ -4,6 +4,7 @@ spring:
   application:
     name: concumer-service
 
+
   jackson:
     property-naming-strategy: CAMEL_CASE_TO_LOWER_CASE_WITH_UNDERSCORES  #驼峰转下划线
 
@@ -64,10 +65,10 @@ spring:
 #              republishToDlq: true
               #ttl: 20000                    # 默认不做限制，即无限。消息在队列中最大的存活时间。当消息滞留超过ttl时，会被当成消费失败消息，即会被转发到死信队列或丢弃.
               max-concurrency: 10             #最大的监听数
-eureka:
-  client:
-    serviceUrl:
-      defaultZone: http://localhost:8300/eureka
+#eureka:
+#  client:
+#    serviceUrl:
+#      defaultZone: http://localhost:8300/eureka
 
 mybatis-plus:
   configuration:
