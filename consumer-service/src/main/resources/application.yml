@@ -8,31 +8,11 @@ spring:
   jackson:
     property-naming-strategy: CAMEL_CASE_TO_LOWER_CASE_WITH_UNDERSCORES  #驼峰转下划线
 
-  redis:
-    host: localhost
-    port: 6379
-    password:
-    jedis:
-      pool:
-        max-active: 8
-        max-wait: 1ms
-        min-idle: 1
-        max-idle: 8
-    timeout: 50000ms
-    database: 0
-
   rabbitmq:
     username: guest
     password: guest
     host: localhost
     port: 5672
-
-  datasource:
-    url: jdbc:mysql://192.168.1.22:3306/test1130?useUnicode=true&autoReconnect=true&failOverReadOnly=false&characterEncoding=utf-8&useSSL=false&serverTimezone=Asia/Shanghai
-    username: root
-    password: 123456
-    driver-class-name: com.mysql.cj.jdbc.Driver
-
 
   cloud:
     stream:
@@ -69,8 +49,3 @@ spring:
 #  client:
 #    serviceUrl:
 #      defaultZone: http://localhost:8300/eureka
-
-mybatis-plus:
-  configuration:
-    cache-enabled: true  #开启缓存
-    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl #

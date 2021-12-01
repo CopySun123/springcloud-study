@@ -8,21 +8,27 @@
         <version>0.0.1-SNAPSHOT</version>
     </parent>
 
-
-    <groupId>com.copysun.eureka</groupId>
-    <artifactId>eureka-server</artifactId>
+    <groupId>com.copysun</groupId>
+    <artifactId>nacos-service</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>eureka-server</name>
-    <description>Demo project for Spring Boot</description>
-
+    <name>nacos-service</name>
+    <description>nacos-service</description>
 
     <dependencies>
+        <!--自定义aop-->
         <dependency>
-            <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter-netflix-eureka-server</artifactId>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-aop</artifactId>
         </dependency>
 
+        <!--quartz定时任务-->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-quartz</artifactId>
+            <version>2.3.7.RELEASE</version>
+        </dependency>
     </dependencies>
+
 
     <build>
         <plugins>

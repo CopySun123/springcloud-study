@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.copysun.mybatisservice.mapper.DemoMapper">
+
+    <select id="getStudents" resultType="com.copysun.mybatisservice.entity.Student">
+        select * from student
+    </select>
+
+    <select id="getId" resultType="java.lang.String">
+        select id from student where id='111'
+    </select>
+</mapper>
