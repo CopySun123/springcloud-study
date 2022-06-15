@@ -1,9 +1,9 @@
 server:
-  port: 8053
+  port: 8035
 
 spring:
   application:
-    name: nacos-service
+    name: openfegin-service
   cloud:
     nacos:
       discovery:
@@ -13,7 +13,6 @@ spring:
     username: root
     password: 123456
     driver-class-name: com.mysql.cj.jdbc.Driver
-
   redis:
     host: localhost
     port: 6379
@@ -27,10 +26,10 @@ spring:
     timeout: 50000ms
     database: 0
 
-jackson:
-  property-naming-strategy: CAMEL_CASE_TO_LOWER_CASE_WITH_UNDERSCORES  #驼峰转下划线
 
+#????????????
 mybatis-plus:
+  mapper-locations: classpath:mapper/*.xml
   configuration:
-    cache-enabled: true  #开启缓存
-    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl #
+    cache-enabled: true
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl

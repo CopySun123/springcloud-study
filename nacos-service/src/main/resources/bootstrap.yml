@@ -1,0 +1,29 @@
+server:
+  port: 8036
+spring:
+  application:
+    name: nacos-service
+  cloud:
+    nacos:
+      discovery:
+        server-addr: localhost:8848
+      config:
+        server-addr: localhost:8848
+        file-extension: yaml
+        namespace: 58ce90a4-7552-4158-b66e-4a05e31525ca
+  profiles:
+    #根据pom文件profiles->profile 下面的配置
+#    active: @env@
+    active: dev
+
+
+
+jackson:
+  property-naming-strategy: CAMEL_CASE_TO_LOWER_CASE_WITH_UNDERSCORES  #驼峰转下划线
+
+#开启缓存、开启控制台日志
+mybatis-plus:
+  mapper-locations: classpath:mapper/*.xml
+  configuration:
+    cache-enabled: true
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl

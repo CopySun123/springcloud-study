@@ -22,12 +22,12 @@
 
     <modules>
         <module>nacos-service</module>
+        <module>openfeign-service</module>
         <module>eureka-server</module>
         <module>consumer-service</module>
         <module>producer-service</module>
         <module>gateway</module>
         <module>camunda</module>
-        <module>nacos-server</module>
         <module>mybatis-service</module>
         <module>export-service</module>
     </modules>
@@ -40,6 +40,8 @@
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
 
+
+
         <!--redis-->
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -50,6 +52,17 @@
         <dependency>
             <groupId>com.alibaba.cloud</groupId>
             <artifactId>spring-cloud-starter-alibaba-nacos-discovery</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>com.alibaba.cloud</groupId>
+            <artifactId>spring-cloud-starter-alibaba-nacos-config</artifactId>
+        </dependency>
+
+        <!--spring cloud openfeign-->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-openfeign</artifactId>
         </dependency>
 
         <!--mysql驱动-->
@@ -126,13 +139,13 @@
 
     </dependencyManagement>
 
-    <build>
-        <plugins>
-            <plugin>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-maven-plugin</artifactId>
-            </plugin>
-        </plugins>
-    </build>
+<!--    <build>-->
+<!--        <plugins>-->
+<!--            <plugin>-->
+<!--                <groupId>org.springframework.boot</groupId>-->
+<!--                <artifactId>spring-boot-maven-plugin</artifactId>-->
+<!--            </plugin>-->
+<!--        </plugins>-->
+<!--    </build>-->
 
 </project>
