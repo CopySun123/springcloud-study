@@ -14,4 +14,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 public interface UserService {
 	@PostMapping("/get")
     UserEntity getUser(UserEntity userEntity);
+
+	@PostMapping("/updateUser")
+	void updateUser(UserEntity userEntity);
 }

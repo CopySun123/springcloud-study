@@ -1,7 +1,7 @@
 package com.copysun.openfeignservice.controller;
 
 import com.copysun.openfeignservice.entity.UserEntity;
-import com.copysun.openfeignservice.outservice.UserService;
+import com.copysun.openfeignservice.outservice.impl.UserServiceImpl;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -18,13 +18,18 @@ import javax.annotation.Resource;
 public class OpenFeignController {
 
 	@Resource
-	private UserService userService;
+    private UserServiceImpl userServiceImpl;
 
 	@PostMapping(value = "/get")
 	@ResponseBody
 	public UserEntity getUser(@RequestBody UserEntity userEntity){
+		return userServiceImpl.getUser(userEntity);
+	}
 
-		return userService.getUser(userEntity);
+	@PostMapping(value = "/updateUser")
+	@ResponseBody
+	public void updateUser(@RequestBody UserEntity userEntity){
+		userServiceImpl.updateUser(userEntity);
 	}
 
 }

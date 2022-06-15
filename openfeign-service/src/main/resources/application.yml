@@ -26,8 +26,11 @@ spring:
     timeout: 50000ms
     database: 0
 
+#开启fallback熔断
+feign:
+  hystrix:
+    enabled: true
 
-#????????????
 mybatis-plus:
   mapper-locations: classpath:mapper/*.xml
   configuration:

@@ -12,7 +12,12 @@ import org.springframework.stereotype.Service;
 @Service
 public class UserFallbackImpl implements UserService {
 	public UserEntity getUser(UserEntity userEntity) {
-		System.out.println("远程调用失败---------------");
-		return null;
+		throw new RuntimeException("远程调用失败---------------");
+		//throw new Error("远程调用失败---------------");
+		//System.out.println("远程调用失败---------------");
+	}
+
+	public void updateUser(UserEntity userEntity) {
+		System.out.println("远程修改失败---------");
 	}
 }

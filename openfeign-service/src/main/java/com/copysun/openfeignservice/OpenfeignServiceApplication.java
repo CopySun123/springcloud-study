@@ -10,11 +10,11 @@ import org.springframework.cloud.openfeign.EnableFeignClients;
  */
 @SpringBootApplication
 @EnableDiscoveryClient
-@EnableFeignClients
-public class OpenfeginServiceApplication {
+@EnableFeignClients({"com.copysun.openfeignservice.outservice"})
+public class OpenfeignServiceApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(OpenfeginServiceApplication.class, args);
+		SpringApplication.run(OpenfeignServiceApplication.class, args);
 	}
 
 }
