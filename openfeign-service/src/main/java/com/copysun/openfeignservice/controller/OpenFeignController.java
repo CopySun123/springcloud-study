@@ -28,8 +28,13 @@ public class OpenFeignController {
 
 	@PostMapping(value = "/updateUser")
 	@ResponseBody
-	public void updateUser(@RequestBody UserEntity userEntity){
+	public void updateUser(@RequestBody UserEntity userEntity) throws Exception {
 		userServiceImpl.updateUser(userEntity);
+		//try {
+		//	userServiceImpl.updateUser(userEntity);
+		//} catch (Exception e) {
+		//	e.printStackTrace();
+		//}
 	}
 
 }

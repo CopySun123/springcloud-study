@@ -8,11 +8,36 @@ spring:
     nacos:
       discovery:
         server-addr: localhost:8848
+#    alibaba:
+#      seata:
+#        tx-service-group: fcp_tx_group
   datasource:
     url: jdbc:mysql:///test?useUnicode=true&autoReconnect=true&failOverReadOnly=false&characterEncoding=utf-8&useSSL=false&serverTimezone=Asia/Shanghai
     username: root
     password: 123456
     driver-class-name: com.mysql.cj.jdbc.Driver
+    type: com.alibaba.druid.pool.DruidDataSource
+    # 连接池配置
+    druid:
+      # 初始化大小，最小，最大
+      initial-size: 5
+      min-idle: 1
+      max-active: 50
+      # 配置获取连接等待超时的时间
+      max-wait: 60000
+      async-init: true
+      # 配置间隔多久才进行一次检测，检测需要关闭的空闲连接，单位毫秒
+      time-between-eviction-runs-millis: 60000
+      # 配置一个连接在池中最小生存时间
+      min-evictable-idle-time-millis: 300000
+      validation-query: SELECT 1 FROM user
+      test-while-idle: true
+      test-on-borrow: false
+      test-on-return: false
+      # 打开 PSCache，并且指定每个连接上 PSCache 的大小
+      pool-prepared-statements: true
+      max-pool-prepared-statement-per-connection-size: 20
+      max-open-prepared-statements: 100
   redis:
     host: localhost
     port: 6379
@@ -27,12 +52,33 @@ spring:
     database: 0
 
 #开启fallback熔断
-feign:
-  hystrix:
-    enabled: true
+#feign:
+#  hystrix:
+#    enabled: true
 
 mybatis-plus:
   mapper-locations: classpath:mapper/*.xml
   configuration:
     cache-enabled: true
     log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+
+seata:
+  tx-service-group: test_tx_group
+  #对应file.conf -> service节点的配置
+#  service:
+#    vgroup-mapping:
+#      test_tx_group: default
+  registry:
+    type: nacos
+    nacos:
+      application: seata-server
+      serverAddr: 127.0.0.1:8848
+      group: SEATA_GROUP
+      namespace: 2771bc44-e264-4b89-a5b8-b6702c73fcdd
+  config:
+    type: nacos
+    nacos:
+      server-addr: 127.0.0.1:8848
+      group: SEATA_GROUP
+      namespace: 2771bc44-e264-4b89-a5b8-b6702c73fcdd
+      dataId: seata.properties

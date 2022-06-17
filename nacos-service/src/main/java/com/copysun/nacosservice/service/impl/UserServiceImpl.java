@@ -9,6 +9,7 @@ import com.copysun.nacosservice.mapper.UserMapper;
 import com.copysun.nacosservice.service.UserService;
 import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 import java.util.Map;
@@ -19,6 +20,7 @@ import java.util.Map;
  * @Desc
  */
 @Service
+@Transactional(rollbackFor = Exception.class)
 public class UserServiceImpl extends ServiceImpl<UserMapper,UserEntity> implements UserService  {
 
 	public List<UserEntity> getList(Map<String,Object> param) {

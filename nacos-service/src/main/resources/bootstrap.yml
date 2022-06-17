@@ -27,3 +27,24 @@ mybatis-plus:
   configuration:
     cache-enabled: true
     log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+
+seata:
+  tx-service-group: test_tx_group
+  #对应file.conf -> service节点的配置
+#  service:
+#    vgroup-mapping:
+#      test_tx_group: default
+  registry:
+    type: nacos
+    nacos:
+      application: seata-server
+      serverAddr: 127.0.0.1:8848
+      group: SEATA_GROUP
+      namespace: 2771bc44-e264-4b89-a5b8-b6702c73fcdd
+  config:
+    type: nacos
+    nacos:
+      server-addr: 127.0.0.1:8848
+      group: SEATA_GROUP
+      namespace: 2771bc44-e264-4b89-a5b8-b6702c73fcdd
+      dataId: seata.properties
