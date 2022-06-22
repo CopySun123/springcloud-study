@@ -1,3 +1,4 @@
+/*
 package com.copysun.camunda.camunda.controller;
 
 import org.camunda.bpm.engine.HistoryService;
@@ -18,11 +19,13 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+*/
 /**
  * @author CopySun
  * @date 2020/12/10 17:48
  * @Description
- */
+ *//*
+
 @RestController
 public class StudentController {
     @Resource
@@ -56,9 +59,11 @@ public class StudentController {
         System.out.println(deploy.getId());
     }
 
-    /**
+    */
+/**
      *  查询我发起的流程
-     */
+     *//*
+
     @PostMapping("processQuery/{sponsorId}")
     public void processQuery(@PathVariable String sponsorId){
 //        List<ProcessInstance> processInstances = runtimeService.createProcessInstanceQuery()
@@ -77,9 +82,11 @@ public class StudentController {
             System.out.println(historicProcessInstance.getProcessDefinitionId());
         });
     }
-    /**
+    */
+/**
      * 查询任务(发起人)
-     */
+     *//*
+
     @PostMapping("taskQuery/{userId}")
     public void taskQuery(@PathVariable String userId){
         List<Task> tasks = taskService.createTaskQuery()
@@ -92,9 +99,11 @@ public class StudentController {
 
     }
 
-    /**
+    */
+/**
      * 完成任务
-     */
+     *//*
+
     @PostMapping("taskComplete/{userId}")
     public void taskComplete(@PathVariable String userId){
         Map<String,Object> params=new HashMap<>(16);
@@ -108,9 +117,11 @@ public class StudentController {
     }
 
 
-    /**
+    */
+/**
      * 候选人拾取任务
-     */
+     *//*
+
     @PostMapping("claimTask/{userId}")
     public void claimTask(@PathVariable String userId){
         //查询候选人的代办任务
@@ -120,3 +131,4 @@ public class StudentController {
     }
 
 }
+*/

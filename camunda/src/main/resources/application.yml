@@ -2,29 +2,66 @@ server:
   port: 8400
 spring:
   application:
-    name: cumunda-service
+    name: camunda-service
   jackson:
     property-naming-strategy: CAMEL_CASE_TO_LOWER_CASE_WITH_UNDERSCORES  #驼峰转下划线
+#    parser:
+#      allow-unquoted-field-names: true    #允许出现特殊字符和转义符
+#    serialization:
+#      indent-output: true     #格式化输出
+
+  cloud:
+    nacos:
+      discovery:
+        server-addr: localhost:8848
   datasource:
-    url: jdbc:mysql://192.168.1.22:3306/test1130?useUnicode=true&autoReconnect=true&failOverReadOnly=false&characterEncoding=utf-8&useSSL=false&serverTimezone=Asia/Shanghai
+    url: jdbc:mysql:///test?useUnicode=true&autoReconnect=true&failOverReadOnly=false&characterEncoding=utf-8&useSSL=false&serverTimezone=Asia/Shanghai
     username: root
     password: 123456
-    driver-class-name: com.mysql.jdbc.Driver
+    driver-class-name: com.mysql.cj.jdbc.Driver
     type: com.alibaba.druid.pool.DruidDataSource
+      # 连接池配置
+    druid:
+      # 初始化大小，最小，最大
+      initial-size: 5
+      min-idle: 1
+      max-active: 50
+      # 配置获取连接等待超时的时间
+      max-wait: 60000
+      async-init: true
+      # 配置间隔多久才进行一次检测，检测需要关闭的空闲连接，单位毫秒
+      time-between-eviction-runs-millis: 60000
+      # 配置一个连接在池中最小生存时间
+      min-evictable-idle-time-millis: 300000
+      validation-query: SELECT 1 FROM user
+      test-while-idle: true
+      test-on-borrow: false
+      test-on-return: false
+      # 打开 PSCache，并且指定每个连接上 PSCache 的大小
+      pool-prepared-statements: true
+      max-pool-prepared-statement-per-connection-size: 20
+      max-open-prepared-statements: 100
 camunda.bpm:
-  webapp:
-    index-redirect-enabled: true
+#  webapp:
+#    index-redirect-enabled: true
   admin-user:
     id: admin
     password: admin
-    auto-deployment-enabled: false
+  #自动部署流程开关
+  auto-deployment-enabled: false
+  filter:
+    create: All tasks
 
-eureka:
-  client:
-    serviceUrl:
-      defaultZone: http://localhost:8300/eureka
 
+#日志配置属性
+#  level:
+#    org:
+#      camunda: debug
 logging:
-  level:
-    org:
-      camunda: debug
+  file:
+    path: logfile
+    name: logfile/info.log
+#  config: classpath:logback-spring.xml
+#  pattern:
+#    file: '%d{yyyy-MM-dd HH:mm} -- [%thread] %-5level %logger{50} %msg%n'
+#    console: '%d{yyyy-MM-dd HH:mm:ss} %-5level [%thread] %logger{50}:%line %msg%n'

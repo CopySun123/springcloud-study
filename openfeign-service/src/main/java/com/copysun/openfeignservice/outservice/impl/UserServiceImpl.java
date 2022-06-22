@@ -27,9 +27,9 @@ public class UserServiceImpl {
 	 * @param userEntity
 	 */
 	@GlobalTransactional(name = "test_tx_group",rollbackFor = Exception.class)
-	public void updateUser(UserEntity userEntity) throws Exception {
+	public void updateUser(UserEntity userEntity) {
 		userService.updateUser(userEntity);
-		throw new Exception("分布式事务回滚");
+		throw new RuntimeException("分布式事务回滚");
 		//int i=1/0;
 	}
 
