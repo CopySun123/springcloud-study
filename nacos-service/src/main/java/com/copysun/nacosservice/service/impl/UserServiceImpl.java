@@ -7,7 +7,6 @@ import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.copysun.nacosservice.entity.UserEntity;
 import com.copysun.nacosservice.mapper.UserMapper;
 import com.copysun.nacosservice.service.UserService;
-import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -36,9 +35,9 @@ public class UserServiceImpl extends ServiceImpl<UserMapper,UserEntity> implemen
 	 * @param userEntity
 	 * @return
 	 */
-	@Cacheable(cacheNames="userGetOneCache",key = "'user:'+#userEntity.id")
+	//@Cacheable(cacheNames="userGetOneCache",key = "'user:'+#userEntity.id")
 	public UserEntity getOne(UserEntity userEntity) {
-		return this.getBaseMapper().selectOne(new LambdaQueryWrapper<UserEntity>());
+		return this.getBaseMapper().selectOne(new LambdaQueryWrapper<>(userEntity));
 	}
 
 	public Page<UserEntity> getListPage(Map<String, Object> param) {

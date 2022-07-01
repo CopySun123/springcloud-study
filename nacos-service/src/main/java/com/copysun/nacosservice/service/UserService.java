@@ -16,36 +16,37 @@ public interface UserService extends IService<UserEntity> {
 
 
 	/**
-	 * 查询列表
-	 * @return
+	 *
+	 * @param param param
+	 * @return list
 	 */
 	List<UserEntity> getList(Map<String,Object> param);
 
 	/**
 	 * 添加单个用户
-	 * @param userEntity
+	 * @param userEntity userEntity
 	 */
 	void add(UserEntity userEntity);
 
 
 	/**
 	 * 查询单个用户
-	 * @param userEntity
-	 * @return
+	 * @param userEntity userEntity
+	 * @return UserEntity
 	 */
 	UserEntity getOne(UserEntity userEntity);
 
 	/***
 	 * 分页查询
-	 * @param param
-	 * @return
+	 * @param param param
+	 * @return UserEntity
 	 */
 	Page<UserEntity> getListPage(Map<String,Object> param);
 
 
 	/**
 	 * 删除用户
-	 * @param userEntity
+	 * @param userEntity userEntity
 	 */
 	void delUser(UserEntity userEntity);
 }

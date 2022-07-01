@@ -58,10 +58,11 @@ camunda.bpm:
 #    org:
 #      camunda: debug
 logging:
-  file:
-    path: logfile
-    name: logfile/info.log
-#  config: classpath:logback-spring.xml
+#  file:
+#    path: logfile
+#    name: logfile/info.log
+#  config:
+  config: classpath:logback-spring.xml
 #  pattern:
 #    file: '%d{yyyy-MM-dd HH:mm} -- [%thread] %-5level %logger{50} %msg%n'
 #    console: '%d{yyyy-MM-dd HH:mm:ss} %-5level [%thread] %logger{50}:%line %msg%n'

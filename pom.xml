@@ -17,7 +17,7 @@
         <spring-boot-version>2.3.6.RELEASE</spring-boot-version>
         <mybatis-plus-boot-starter.version>3.4.3.3</mybatis-plus-boot-starter.version>
         <druid.version>1.2.7</druid.version>
-        <hutool.version>5.5.1</hutool.version>
+        <hutool.version>5.8.3</hutool.version>
     </properties>
 
     <modules>
@@ -74,6 +74,12 @@
             <groupId>com.baomidou</groupId>
             <artifactId>mybatis-plus-boot-starter</artifactId>
             <version>${mybatis-plus-boot-starter.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>p6spy</groupId>
+            <artifactId>p6spy</artifactId>
+            <version>3.9.1</version>
         </dependency>
 
         <!--druid 连接池-->

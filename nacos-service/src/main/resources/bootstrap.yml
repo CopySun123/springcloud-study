@@ -3,6 +3,8 @@ server:
 spring:
   application:
     name: nacos-service
+  jackson:
+    property-naming-strategy: CAMEL_CASE_TO_LOWER_CASE_WITH_UNDERSCORES  #驼峰转下划线
   cloud:
     nacos:
       discovery:
@@ -10,41 +12,20 @@ spring:
       config:
         server-addr: localhost:8848
         file-extension: yaml
-        namespace: 58ce90a4-7552-4158-b66e-4a05e31525ca
+        namespace: b7ec8f4c-7629-430b-a3f6-dfde245d272b
   profiles:
     #根据pom文件profiles->profile 下面的配置
 #    active: @env@
-    active: dev
-
-
-
-jackson:
-  property-naming-strategy: CAMEL_CASE_TO_LOWER_CASE_WITH_UNDERSCORES  #驼峰转下划线
+    active: test
 
 #开启缓存、开启控制台日志
 mybatis-plus:
   mapper-locations: classpath:mapper/*.xml
   configuration:
     cache-enabled: true
-    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+#    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+#    log-impl: org.apache.ibatis.logging.nologging.NoLoggingImpl
 
-seata:
-  tx-service-group: test_tx_group
-  #对应file.conf -> service节点的配置
-#  service:
-#    vgroup-mapping:
-#      test_tx_group: default
-  registry:
-    type: nacos
-    nacos:
-      application: seata-server
-      serverAddr: 127.0.0.1:8848
-      group: SEATA_GROUP
-      namespace: 2771bc44-e264-4b89-a5b8-b6702c73fcdd
-  config:
-    type: nacos
-    nacos:
-      server-addr: 127.0.0.1:8848
-      group: SEATA_GROUP
-      namespace: 2771bc44-e264-4b89-a5b8-b6702c73fcdd
-      dataId: seata.properties
+#使用logback日志
+logging:
+  config: classpath:logback-spring.xml
