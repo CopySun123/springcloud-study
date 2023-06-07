@@ -1,19 +1,21 @@
 server:
-  port: 8300
-
+  port: 8761
+spring:
+  application:
+    name: eureka-server
 eureka:
   instance:
     hostname: localhost
-    lease-expiration-duration-in-seconds: 10
-    lease-renewal-interval-in-seconds: 5
+    lease-expiration-duration-in-seconds: 90   # eureka服务端从可用服务列表剔除不可用服务的时间间隔，默认是90s，即：3个心跳检测间隔
+    lease-renewal-interval-in-seconds: 30      # eureka客户端和eureka服务端进行服务续约的时间间隔，默认是30s
   client:
-    registerWithEureka: false
-    fetchRegistry: false
-    registry-fetch-interval-seconds: 5
+    registerWithEureka: false    #表示是否将自己注册到Eureka Server
+    fetchRegistry: false         #表示是否从Eureka Server获取注册信息
+    registry-fetch-interval-seconds: 30  #表示客户端从Eureka注册中心同步节点信息的时间间隔:默认30s,生产环境配置为5s
     serviceUrl:
-      defaultZone: http://${eureka.instance.hostname}:8300/eureka/
+      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
   server:
-    response-cache-auto-expiration-in-seconds: 5
+    response-cache-auto-expiration-in-seconds: 30
     eviction-interval-timer-in-ms: 5000
     enable-self-preservation: false
     use-read-only-response-cache: false

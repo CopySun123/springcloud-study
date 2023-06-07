@@ -1,0 +1,9 @@
+server:
+  port: 1111
+
+spring:
+  application:
+    name: demo-service
+testuser:
+  name: copysun
+  age: 25

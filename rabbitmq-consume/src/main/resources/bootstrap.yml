@@ -1,0 +1,26 @@
+server:
+  port: 8851
+spring:
+  application:
+    name: rabbitmq-consume
+  cloud:
+    nacos:
+      config:
+        server-addr: localhost:8848
+        namespace: 33f6ca16-6ee1-44ed-9107-ca6acd22e211
+        group: ${spring.application.name}
+        file-extension: yaml
+#        用户共享的配置文件
+        shared-configs:
+          - data-id: nacos-regist.yaml
+            group: DEFAULT_GROUP
+            refresh: true
+          - data-id: mybatis-plus.yaml
+            group: DEFAULT_GROUP
+            refresh: true
+          - data-id: datasource-mysql.yaml
+            group: DEFAULT_GROUP
+            refresh: true
+          - data-id: mq.yaml
+            group: DEFAULT_GROUP
+            refresh: true

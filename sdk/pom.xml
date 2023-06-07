@@ -7,28 +7,17 @@
         <artifactId>springcloud-study</artifactId>
         <version>0.0.1-SNAPSHOT</version>
     </parent>
-
-
-    <groupId>com.copysun.eureka</groupId>
-    <artifactId>eureka-server</artifactId>
+    <groupId>com.copysun</groupId>
+    <artifactId>sdk</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>eureka-server</name>
-    <description>Demo project for Spring Boot</description>
-
-
-    <dependencies>
-        <dependency>
-            <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter-netflix-eureka-server</artifactId>
-        </dependency>
-    </dependencies>
+    <name>sdk</name>
+    <description>sdk</description>
 
     <build>
         <plugins>
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
-                <version>${spring-boot-version}</version>
             </plugin>
         </plugins>
     </build>

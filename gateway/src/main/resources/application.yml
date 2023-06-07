@@ -3,11 +3,14 @@ server:
 spring:
   application:
     name: gateway
-#  cloud:
-#    gateway:
-#      discovery:
-#        locator:
-#          enabled: true
+  cloud:
+    nacos:
+      discovery:
+        server-addr: localhost:8848
+    gateway:
+      discovery:
+        locator:
+          enabled: true   #开启注册中心路由功能
 #      routes:
 #        - id: product_router
 #          uri: lb://producer-service
@@ -15,7 +18,7 @@ spring:
 #            - Path= /producer-service/**
 #          filters:
 #            - StripPrefix=1
-eureka:
-  client:
-    serviceUrl:
-      defaultZone: http://localhost:8300/eureka
+#eureka:
+#  client:
+#    serviceUrl:
+#      defaultZone: http://localhost:8300/eureka
