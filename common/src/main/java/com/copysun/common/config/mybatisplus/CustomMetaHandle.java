@@ -1,7 +1,7 @@
-package com.copysun.nacosdemo.config.mybatisplus;
+package com.copysun.common.config.mybatisplus;
 
 import com.baomidou.mybatisplus.core.handlers.MetaObjectHandler;
-import com.copysun.nacosdemo.entity.BaseEntity;
+import com.copysun.common.domain.BaseEntity;
 import org.apache.ibatis.reflection.MetaObject;
 import org.springframework.context.annotation.Configuration;
 

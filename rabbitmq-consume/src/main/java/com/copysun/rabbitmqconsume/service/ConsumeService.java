@@ -23,12 +23,20 @@ import java.io.IOException;
 @Slf4j
 public class ConsumeService {
 
-	int count;
-
 	@RabbitListener(queues = "directQueue1")
-	public void receiveDirect1(Message message){
+	public void receiveDirect1(Message message,Channel channel) throws IOException {
 		String msg=new String(message.getBody());
-		log.info("======directQueue1收到消息:"+ msg +"======");
+		log.info("======directQueue1-消费者1收到消息:"+ msg +"======");
+//		try{
+//			int i=1/0;
+//			String msg=new String(message.getBody());
+//			log.info("======directQueue1收到消息:"+ msg +"======");
+//			channel.basicAck(message.getMessageProperties().getDeliveryTag(),false);
+//		}catch (Exception e){
+//			//两个布尔值  第二个设为 false 则丢弃该消息 设为true 则返回给队列
+//			channel.basicNack(message.getMessageProperties().getDeliveryTag(), false, true);
+//			log.error("消费失败 我此次将返回给队列");
+//		}
 	}
 
 	@RabbitListener(queues = "directQueue2")
@@ -37,59 +45,65 @@ public class ConsumeService {
 		log.info("======directQueue2收到消息:"+ msg +"======");
 	}
 
-	@RabbitListener(queues = "topicQueue1")
-	public void receiveTopic1(Message message){
+	@RabbitListener(queues = "directQueue1")
+	public void receiveDirect3(Message message){
 		String msg=new String(message.getBody());
-		log.info("======topicQueue1收到消息:"+ msg +"======");
+		log.info("======directQueue1-消费者2收到消息:"+ msg +"======");
 	}
 
-	@RabbitListener(queues = "topicQueue2")
-	public void receiveTopic2(Message message){
-		String msg=new String(message.getBody());
-		log.info("======topicQueue2收到消息:"+ msg +"======");
-	}
-
-	@RabbitListener(queues = "fanoutQueue1")
-	public void receiveFanout1(Message message, Channel channel) throws IOException {
-		String msg=new String(message.getBody());
-		long deliveryTag = message.getMessageProperties().getDeliveryTag();
-		try {
-			log.info("======fanoutQueue1收到消息成功:"+ msg +"======");
-			channel.basicAck(deliveryTag,false);
-		}catch (Exception e){
-			//第三个参数为true表示重新进入队列
-			channel.basicNack(message.getMessageProperties().getDeliveryTag(),false,true);
-			//channel.basicReject(deliveryTag,true);
-			//channel.basicRecover(true);
-			log.info("======fanoutQueue1收到消息失败,将此条消息返回给队列======");
-		}
-
-	}
-
-	@RabbitListener(queues = "fanoutQueue2")
-	public void receiveFanout2(Message message, Channel channel) {
-		String msg=new String(message.getBody());
-		try {
-			log.info("======重试次数:"+count++);
-			channel.basicAck(message.getMessageProperties().getDeliveryTag(),false);
-		    int i=1/0;
-		}catch (Exception e){
-			log.error("======fanoutQueue2消费者1消费消息失败======"+e.getMessage());
-			throw new RuntimeException(e);
-		}
-		log.info("======fanoutQueue2消费者1消费消息成功:"+ msg +"======");
-	}
-
-	//@RabbitListener(queues = "fanoutQueue2")
-	public void receiveFanout3(Message message, Channel channel) throws IOException {
-		String msg=new String(message.getBody());
-		try {
-			log.info("======fanoutQueue2消费者2收到消息成功:"+ msg +"======");
-			channel.basicAck(message.getMessageProperties().getDeliveryTag(),false);
-		}catch (Exception e){
-			channel.basicRecover(true);
-			//channel.basicNack(message.getMessageProperties().getDeliveryTag(),false,true);
-			log.info("======fanoutQueue2消费者2收到消息失败,将此条消息返回给队列======");
-		}
-	}
+//	@RabbitListener(queues = "topicQueue1")
+//	public void receiveTopic1(Message message){
+//		String msg=new String(message.getBody());
+//		log.info("======topicQueue1收到消息:"+ msg +"======");
+//	}
+//
+//	@RabbitListener(queues = "topicQueue2")
+//	public void receiveTopic2(Message message){
+//		String msg=new String(message.getBody());
+//		log.info("======topicQueue2收到消息:"+ msg +"======");
+//	}
+//
+//	@RabbitListener(queues = "fanoutQueue1")
+//	public void receiveFanout1(Message message, Channel channel) throws IOException {
+//		String msg=new String(message.getBody());
+//		long deliveryTag = message.getMessageProperties().getDeliveryTag();
+//		try {
+//			log.info("======fanoutQueue1收到消息成功:"+ msg +"======");
+//			channel.basicAck(deliveryTag,false);
+//		}catch (Exception e){
+//			//第三个参数为true表示重新进入队列
+//			channel.basicNack(message.getMessageProperties().getDeliveryTag(),false,true);
+//			//channel.basicReject(deliveryTag,true);
+//			//channel.basicRecover(true);
+//			log.info("======fanoutQueue1收到消息失败,将此条消息返回给队列======");
+//		}
+//
+//	}
+//
+//	@RabbitListener(queues = "fanoutQueue2")
+//	public void receiveFanout2(Message message, Channel channel) {
+//		String msg=new String(message.getBody());
+//		try {
+//			log.info("======重试次数:"+count++);
+//			channel.basicAck(message.getMessageProperties().getDeliveryTag(),false);
+//		    int i=1/0;
+//		}catch (Exception e){
+//			log.error("======fanoutQueue2消费者1消费消息失败======"+e.getMessage());
+//			throw new RuntimeException(e);
+//		}
+//		log.info("======fanoutQueue2消费者1消费消息成功:"+ msg +"======");
+//	}
+//
+//	//@RabbitListener(queues = "fanoutQueue2")
+//	public void receiveFanout3(Message message, Channel channel) throws IOException {
+//		String msg=new String(message.getBody());
+//		try {
+//			log.info("======fanoutQueue2消费者2收到消息成功:"+ msg +"======");
+//			channel.basicAck(message.getMessageProperties().getDeliveryTag(),false);
+//		}catch (Exception e){
+//			channel.basicRecover(true);
+//			//channel.basicNack(message.getMessageProperties().getDeliveryTag(),false,true);
+//			log.info("======fanoutQueue2消费者2收到消息失败,将此条消息返回给队列======");
+//		}
+//	}
 }

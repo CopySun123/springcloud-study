@@ -1,4 +1,4 @@
-package com.copysun.nacosdemo.entity;
+package com.copysun.common.domain;
 
 import com.baomidou.mybatisplus.annotation.FieldFill;
 import com.baomidou.mybatisplus.annotation.IdType;

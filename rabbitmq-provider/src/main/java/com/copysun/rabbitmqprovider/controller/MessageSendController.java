@@ -44,7 +44,7 @@ public class MessageSendController {
 	public ResultVo sendDirect(@RequestBody MessageReq messageReq){
 		ResultVo resultVo;
 		try {
-			rabbitTemplate.convertAndSend("testDirectExchange",messageReq.getRoutingKey(),messageReq.getContent());
+			rabbitTemplate.convertAndSend("testDirectExchange",messageReq.getRoutingKey(),messageReq.getContent(),new CorrelationData(""+System.currentTimeMillis()));
 			resultVo=new ResultVo(ResultCode.SUCCESS);
 		}catch (Exception e){
 			resultVo=new ResultVo(ResultCode.FAILED);

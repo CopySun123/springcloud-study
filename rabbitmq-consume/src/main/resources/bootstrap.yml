@@ -7,7 +7,7 @@ spring:
     nacos:
       config:
         server-addr: localhost:8848
-        namespace: 33f6ca16-6ee1-44ed-9107-ca6acd22e211
+        namespace: a5ba029f-5faf-4799-a891-a874d6b0f723
         group: ${spring.application.name}
         file-extension: yaml
 #        用户共享的配置文件

@@ -2,6 +2,7 @@ package com.copysun.nacosdemo.entity;
 
 import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableName;
+import com.copysun.common.domain.BaseEntity;
 import com.copysun.common.enums.SexEnum;
 import lombok.Data;
 import lombok.NoArgsConstructor;

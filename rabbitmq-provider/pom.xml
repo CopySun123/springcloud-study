@@ -8,12 +8,13 @@
         <version>0.0.1-SNAPSHOT</version>
     </parent>
     <groupId>com.copysun</groupId>
-    <artifactId>rabbitmq-consume</artifactId>
+    <artifactId>rabbitmq-provider</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>rabbitmq-consume</name>
-    <description>rabbitmq-consume</description>
+    <name>rabbitmq-provider</name>
+    <description>rabbitmq-provider</description>
 
     <dependencies>
+
         <dependency>
             <groupId>com.copysun</groupId>
             <artifactId>sdk</artifactId>

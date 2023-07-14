@@ -3,6 +3,7 @@ package com.copysun.nacosdemo.controller;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.copysun.common.vo.ResultCode;
 import com.copysun.common.vo.ResultVo;
+import com.copysun.nacosdemo.domain.TestBean;
 import com.copysun.nacosdemo.entity.UserEntity;
 import com.copysun.nacosdemo.service.UserService;
 import lombok.extern.slf4j.Slf4j;
@@ -25,7 +26,26 @@ import java.util.Map;
 public class UserController {
 
 	@Resource
+	TestBean testBean;
+	@Resource
 	UserService userService;
+
+
+	@PostMapping(value = "/testBean")
+	@ResponseBody
+	public ResultVo testBean(){
+		ResultVo resultVo;
+		try{
+			log.info("======用户名:{}======",testBean.getUserName());
+			log.info("======密码:{}======",testBean.getPassword());
+			resultVo=new ResultVo(ResultCode.SUCCESS);
+		}catch (Exception e){
+			log.error("======操作失败!======"+e.getMessage());
+			resultVo=new ResultVo(ResultCode.FAILED);
+			return resultVo;
+		}
+		return resultVo;
+	}
 
 	@PostMapping(value = "/listEntity")
 	@ResponseBody

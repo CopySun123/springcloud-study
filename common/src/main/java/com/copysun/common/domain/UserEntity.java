@@ -1,4 +1,4 @@
-package com.copysun.openfeignservice.domain;
+package com.copysun.common.domain;
 
 import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableName;

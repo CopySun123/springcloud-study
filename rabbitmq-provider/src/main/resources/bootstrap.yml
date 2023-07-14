@@ -1,16 +1,16 @@
 server:
-  port: 8849
+  port: 8850
 spring:
   application:
-    name: nacos-demo
+    name: rabbitmq-provider
   cloud:
     nacos:
       config:
         server-addr: localhost:8848
-        namespace: aaca1f25-6082-4df8-aa91-f02b71b19821
+        namespace: a5ba029f-5faf-4799-a891-a874d6b0f723
         group: ${spring.application.name}
         file-extension: yaml
-#        用户共享的配置文件
+        #        用户共享的配置文件
         shared-configs:
           - data-id: nacos-regist.yaml
             group: DEFAULT_GROUP
@@ -19,5 +19,8 @@ spring:
             group: DEFAULT_GROUP
             refresh: true
           - data-id: datasource-mysql.yaml
+            group: DEFAULT_GROUP
+            refresh: true
+          - data-id: mq.yaml
             group: DEFAULT_GROUP
             refresh: true
