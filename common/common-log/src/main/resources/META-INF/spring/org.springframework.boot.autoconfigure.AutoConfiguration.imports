@@ -1,0 +1,2 @@
+com.copysun.common.log.service.AsyncLogService
+com.copysun.common.log.aspect.LogAspect

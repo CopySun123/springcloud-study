@@ -1,0 +1,172 @@
+10:16:01.573 [boundedElastic-38] ERROR c.a.c.n.d.r.NacosReactiveDiscoveryClient - [lambda$getServices$3,94] - get services from nacos server fail,
+com.alibaba.nacos.api.exception.NacosException: java.util.concurrent.TimeoutException: Waited 3000 milliseconds (plus 19 milliseconds, 584000 nanoseconds delay) for com.alibaba.nacos.shaded.io.grpc.stub.ClientCalls$GrpcFuture@11314561[status=PENDING, info=[GrpcFuture{clientCall=ClientCallImpl{method=MethodDescriptor{fullMethodName=Request/request, type=UNARY, idempotent=false, safe=false, sampledToLocalTracing=true, requestMarshaller=com.alibaba.nacos.shaded.io.grpc.protobuf.lite.ProtoLiteUtils$MessageMarshaller@55a5d66d, responseMarshaller=com.alibaba.nacos.shaded.io.grpc.protobuf.lite.ProtoLiteUtils$MessageMarshaller@688ee0cc, schemaDescriptor=com.alibaba.nacos.api.grpc.auto.RequestGrpc$RequestMethodDescriptorSupplier@6829e419}}}]]
+	at com.alibaba.nacos.common.remote.client.grpc.GrpcConnection.request(GrpcConnection.java:78)
+	at com.alibaba.nacos.common.remote.client.RpcClient.request(RpcClient.java:641)
+	at com.alibaba.nacos.common.remote.client.RpcClient.request(RpcClient.java:619)
+	at com.alibaba.nacos.client.naming.remote.gprc.NamingGrpcClientProxy.requestToServer(NamingGrpcClientProxy.java:356)
+	at com.alibaba.nacos.client.naming.remote.gprc.NamingGrpcClientProxy.getServiceList(NamingGrpcClientProxy.java:282)
+	at com.alibaba.nacos.client.naming.remote.NamingClientProxyDelegate.getServiceList(NamingClientProxyDelegate.java:162)
+	at com.alibaba.nacos.client.naming.NacosNamingService.getServicesOfServer(NacosNamingService.java:461)
+	at com.alibaba.nacos.client.naming.NacosNamingService.getServicesOfServer(NacosNamingService.java:449)
+	at com.alibaba.cloud.nacos.discovery.NacosServiceDiscovery.getServices(NacosServiceDiscovery.java:70)
+	at com.alibaba.cloud.nacos.discovery.reactive.NacosReactiveDiscoveryClient.lambda$getServices$3(NacosReactiveDiscoveryClient.java:87)
+	at reactor.core.publisher.FluxDefer.subscribe(FluxDefer.java:46)
+	at reactor.core.publisher.FluxSubscribeOn$SubscribeOnSubscriber.run(FluxSubscribeOn.java:194)
+	at reactor.core.scheduler.WorkerTask.call(WorkerTask.java:84)
+	at reactor.core.scheduler.WorkerTask.call(WorkerTask.java:37)
+	at java.util.concurrent.FutureTask.run$$$capture(FutureTask.java:266)
+	at java.util.concurrent.FutureTask.run(FutureTask.java)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$201(ScheduledThreadPoolExecutor.java:180)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:293)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: java.util.concurrent.TimeoutException: Waited 3000 milliseconds (plus 19 milliseconds, 584000 nanoseconds delay) for com.alibaba.nacos.shaded.io.grpc.stub.ClientCalls$GrpcFuture@11314561[status=PENDING, info=[GrpcFuture{clientCall=ClientCallImpl{method=MethodDescriptor{fullMethodName=Request/request, type=UNARY, idempotent=false, safe=false, sampledToLocalTracing=true, requestMarshaller=com.alibaba.nacos.shaded.io.grpc.protobuf.lite.ProtoLiteUtils$MessageMarshaller@55a5d66d, responseMarshaller=com.alibaba.nacos.shaded.io.grpc.protobuf.lite.ProtoLiteUtils$MessageMarshaller@688ee0cc, schemaDescriptor=com.alibaba.nacos.api.grpc.auto.RequestGrpc$RequestMethodDescriptorSupplier@6829e419}}}]]
+	at com.alibaba.nacos.shaded.com.google.common.util.concurrent.AbstractFuture.get(AbstractFuture.java:508)
+	at com.alibaba.nacos.common.remote.client.grpc.GrpcConnection.request(GrpcConnection.java:76)
+	... 20 common frames omitted
+10:16:01.548 [boundedElastic-39] ERROR c.a.c.n.d.r.NacosReactiveDiscoveryClient - [lambda$getServices$3,94] - get services from nacos server fail,
+com.alibaba.nacos.api.exception.NacosException: java.util.concurrent.TimeoutException: Waited 3000 milliseconds (plus 19 milliseconds, 387500 nanoseconds delay) for com.alibaba.nacos.shaded.io.grpc.stub.ClientCalls$GrpcFuture@38453c2e[status=PENDING, info=[GrpcFuture{clientCall=ClientCallImpl{method=MethodDescriptor{fullMethodName=Request/request, type=UNARY, idempotent=false, safe=false, sampledToLocalTracing=true, requestMarshaller=com.alibaba.nacos.shaded.io.grpc.protobuf.lite.ProtoLiteUtils$MessageMarshaller@55a5d66d, responseMarshaller=com.alibaba.nacos.shaded.io.grpc.protobuf.lite.ProtoLiteUtils$MessageMarshaller@688ee0cc, schemaDescriptor=com.alibaba.nacos.api.grpc.auto.RequestGrpc$RequestMethodDescriptorSupplier@6829e419}}}]]
+	at com.alibaba.nacos.common.remote.client.grpc.GrpcConnection.request(GrpcConnection.java:78)
+	at com.alibaba.nacos.common.remote.client.RpcClient.request(RpcClient.java:641)
+	at com.alibaba.nacos.common.remote.client.RpcClient.request(RpcClient.java:619)
+	at com.alibaba.nacos.client.naming.remote.gprc.NamingGrpcClientProxy.requestToServer(NamingGrpcClientProxy.java:356)
+	at com.alibaba.nacos.client.naming.remote.gprc.NamingGrpcClientProxy.getServiceList(NamingGrpcClientProxy.java:282)
+	at com.alibaba.nacos.client.naming.remote.NamingClientProxyDelegate.getServiceList(NamingClientProxyDelegate.java:162)
+	at com.alibaba.nacos.client.naming.NacosNamingService.getServicesOfServer(NacosNamingService.java:461)
+	at com.alibaba.nacos.client.naming.NacosNamingService.getServicesOfServer(NacosNamingService.java:449)
+	at com.alibaba.cloud.nacos.discovery.NacosServiceDiscovery.getServices(NacosServiceDiscovery.java:70)
+	at com.alibaba.cloud.nacos.discovery.reactive.NacosReactiveDiscoveryClient.lambda$getServices$3(NacosReactiveDiscoveryClient.java:87)
+	at reactor.core.publisher.FluxDefer.subscribe(FluxDefer.java:46)
+	at reactor.core.publisher.FluxSubscribeOn$SubscribeOnSubscriber.run(FluxSubscribeOn.java:194)
+	at reactor.core.scheduler.WorkerTask.call(WorkerTask.java:84)
+	at reactor.core.scheduler.WorkerTask.call(WorkerTask.java:37)
+	at java.util.concurrent.FutureTask.run$$$capture(FutureTask.java:266)
+	at java.util.concurrent.FutureTask.run(FutureTask.java)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$201(ScheduledThreadPoolExecutor.java:180)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:293)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: java.util.concurrent.TimeoutException: Waited 3000 milliseconds (plus 19 milliseconds, 387500 nanoseconds delay) for com.alibaba.nacos.shaded.io.grpc.stub.ClientCalls$GrpcFuture@38453c2e[status=PENDING, info=[GrpcFuture{clientCall=ClientCallImpl{method=MethodDescriptor{fullMethodName=Request/request, type=UNARY, idempotent=false, safe=false, sampledToLocalTracing=true, requestMarshaller=com.alibaba.nacos.shaded.io.grpc.protobuf.lite.ProtoLiteUtils$MessageMarshaller@55a5d66d, responseMarshaller=com.alibaba.nacos.shaded.io.grpc.protobuf.lite.ProtoLiteUtils$MessageMarshaller@688ee0cc, schemaDescriptor=com.alibaba.nacos.api.grpc.auto.RequestGrpc$RequestMethodDescriptorSupplier@6829e419}}}]]
+	at com.alibaba.nacos.shaded.com.google.common.util.concurrent.AbstractFuture.get(AbstractFuture.java:508)
+	at com.alibaba.nacos.common.remote.client.grpc.GrpcConnection.request(GrpcConnection.java:76)
+	... 20 common frames omitted
+13:24:23.427 [boundedElastic-57] ERROR c.a.c.n.d.r.NacosReactiveDiscoveryClient - [lambda$getServices$3,94] - get services from nacos server fail,
+com.alibaba.nacos.api.exception.NacosException: java.util.concurrent.TimeoutException: Waited 3000 milliseconds (plus 3278 milliseconds, 521201 nanoseconds delay) for com.alibaba.nacos.shaded.io.grpc.stub.ClientCalls$GrpcFuture@37585d57[status=PENDING, info=[GrpcFuture{clientCall=ClientCallImpl{method=MethodDescriptor{fullMethodName=Request/request, type=UNARY, idempotent=false, safe=false, sampledToLocalTracing=true, requestMarshaller=com.alibaba.nacos.shaded.io.grpc.protobuf.lite.ProtoLiteUtils$MessageMarshaller@35adbd58, responseMarshaller=com.alibaba.nacos.shaded.io.grpc.protobuf.lite.ProtoLiteUtils$MessageMarshaller@23a7f70f, schemaDescriptor=com.alibaba.nacos.api.grpc.auto.RequestGrpc$RequestMethodDescriptorSupplier@c4f728}}}]]
+	at com.alibaba.nacos.common.remote.client.grpc.GrpcConnection.request(GrpcConnection.java:78)
+	at com.alibaba.nacos.common.remote.client.RpcClient.request(RpcClient.java:641)
+	at com.alibaba.nacos.common.remote.client.RpcClient.request(RpcClient.java:619)
+	at com.alibaba.nacos.client.naming.remote.gprc.NamingGrpcClientProxy.requestToServer(NamingGrpcClientProxy.java:356)
+	at com.alibaba.nacos.client.naming.remote.gprc.NamingGrpcClientProxy.getServiceList(NamingGrpcClientProxy.java:282)
+	at com.alibaba.nacos.client.naming.remote.NamingClientProxyDelegate.getServiceList(NamingClientProxyDelegate.java:162)
+	at com.alibaba.nacos.client.naming.NacosNamingService.getServicesOfServer(NacosNamingService.java:461)
+	at com.alibaba.nacos.client.naming.NacosNamingService.getServicesOfServer(NacosNamingService.java:449)
+	at com.alibaba.cloud.nacos.discovery.NacosServiceDiscovery.getServices(NacosServiceDiscovery.java:70)
+	at com.alibaba.cloud.nacos.discovery.reactive.NacosReactiveDiscoveryClient.lambda$getServices$3(NacosReactiveDiscoveryClient.java:87)
+	at reactor.core.publisher.FluxDefer.subscribe(FluxDefer.java:46)
+	at reactor.core.publisher.FluxSubscribeOn$SubscribeOnSubscriber.run(FluxSubscribeOn.java:194)
+	at reactor.core.scheduler.WorkerTask.call(WorkerTask.java:84)
+	at reactor.core.scheduler.WorkerTask.call(WorkerTask.java:37)
+	at java.util.concurrent.FutureTask.run$$$capture(FutureTask.java:266)
+	at java.util.concurrent.FutureTask.run(FutureTask.java)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$201(ScheduledThreadPoolExecutor.java:180)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:293)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: java.util.concurrent.TimeoutException: Waited 3000 milliseconds (plus 3278 milliseconds, 521201 nanoseconds delay) for com.alibaba.nacos.shaded.io.grpc.stub.ClientCalls$GrpcFuture@37585d57[status=PENDING, info=[GrpcFuture{clientCall=ClientCallImpl{method=MethodDescriptor{fullMethodName=Request/request, type=UNARY, idempotent=false, safe=false, sampledToLocalTracing=true, requestMarshaller=com.alibaba.nacos.shaded.io.grpc.protobuf.lite.ProtoLiteUtils$MessageMarshaller@35adbd58, responseMarshaller=com.alibaba.nacos.shaded.io.grpc.protobuf.lite.ProtoLiteUtils$MessageMarshaller@23a7f70f, schemaDescriptor=com.alibaba.nacos.api.grpc.auto.RequestGrpc$RequestMethodDescriptorSupplier@c4f728}}}]]
+	at com.alibaba.nacos.shaded.com.google.common.util.concurrent.AbstractFuture.get(AbstractFuture.java:508)
+	at com.alibaba.nacos.common.remote.client.grpc.GrpcConnection.request(GrpcConnection.java:76)
+	... 20 common frames omitted
+13:24:23.426 [boundedElastic-56] ERROR c.a.c.n.d.r.NacosReactiveDiscoveryClient - [lambda$getServices$3,94] - get services from nacos server fail,
+com.alibaba.nacos.api.exception.NacosException: java.util.concurrent.TimeoutException: Waited 3000 milliseconds (plus 10819 milliseconds, 691000 nanoseconds delay) for com.alibaba.nacos.shaded.io.grpc.stub.ClientCalls$GrpcFuture@4335f2cb[status=PENDING, info=[GrpcFuture{clientCall=ClientCallImpl{method=MethodDescriptor{fullMethodName=Request/request, type=UNARY, idempotent=false, safe=false, sampledToLocalTracing=true, requestMarshaller=com.alibaba.nacos.shaded.io.grpc.protobuf.lite.ProtoLiteUtils$MessageMarshaller@35adbd58, responseMarshaller=com.alibaba.nacos.shaded.io.grpc.protobuf.lite.ProtoLiteUtils$MessageMarshaller@23a7f70f, schemaDescriptor=com.alibaba.nacos.api.grpc.auto.RequestGrpc$RequestMethodDescriptorSupplier@c4f728}}}]]
+	at com.alibaba.nacos.common.remote.client.grpc.GrpcConnection.request(GrpcConnection.java:78)
+	at com.alibaba.nacos.common.remote.client.RpcClient.request(RpcClient.java:641)
+	at com.alibaba.nacos.common.remote.client.RpcClient.request(RpcClient.java:619)
+	at com.alibaba.nacos.client.naming.remote.gprc.NamingGrpcClientProxy.requestToServer(NamingGrpcClientProxy.java:356)
+	at com.alibaba.nacos.client.naming.remote.gprc.NamingGrpcClientProxy.getServiceList(NamingGrpcClientProxy.java:282)
+	at com.alibaba.nacos.client.naming.remote.NamingClientProxyDelegate.getServiceList(NamingClientProxyDelegate.java:162)
+	at com.alibaba.nacos.client.naming.NacosNamingService.getServicesOfServer(NacosNamingService.java:461)
+	at com.alibaba.nacos.client.naming.NacosNamingService.getServicesOfServer(NacosNamingService.java:449)
+	at com.alibaba.cloud.nacos.discovery.NacosServiceDiscovery.getServices(NacosServiceDiscovery.java:70)
+	at com.alibaba.cloud.nacos.discovery.reactive.NacosReactiveDiscoveryClient.lambda$getServices$3(NacosReactiveDiscoveryClient.java:87)
+	at reactor.core.publisher.FluxDefer.subscribe(FluxDefer.java:46)
+	at reactor.core.publisher.FluxSubscribeOn$SubscribeOnSubscriber.run(FluxSubscribeOn.java:194)
+	at reactor.core.scheduler.WorkerTask.call(WorkerTask.java:84)
+	at reactor.core.scheduler.WorkerTask.call(WorkerTask.java:37)
+	at java.util.concurrent.FutureTask.run$$$capture(FutureTask.java:266)
+	at java.util.concurrent.FutureTask.run(FutureTask.java)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$201(ScheduledThreadPoolExecutor.java:180)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:293)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: java.util.concurrent.TimeoutException: Waited 3000 milliseconds (plus 10819 milliseconds, 691000 nanoseconds delay) for com.alibaba.nacos.shaded.io.grpc.stub.ClientCalls$GrpcFuture@4335f2cb[status=PENDING, info=[GrpcFuture{clientCall=ClientCallImpl{method=MethodDescriptor{fullMethodName=Request/request, type=UNARY, idempotent=false, safe=false, sampledToLocalTracing=true, requestMarshaller=com.alibaba.nacos.shaded.io.grpc.protobuf.lite.ProtoLiteUtils$MessageMarshaller@35adbd58, responseMarshaller=com.alibaba.nacos.shaded.io.grpc.protobuf.lite.ProtoLiteUtils$MessageMarshaller@23a7f70f, schemaDescriptor=com.alibaba.nacos.api.grpc.auto.RequestGrpc$RequestMethodDescriptorSupplier@c4f728}}}]]
+	at com.alibaba.nacos.shaded.com.google.common.util.concurrent.AbstractFuture.get(AbstractFuture.java:508)
+	at com.alibaba.nacos.common.remote.client.grpc.GrpcConnection.request(GrpcConnection.java:76)
+	... 20 common frames omitted
+14:36:34.504 [main] ERROR o.s.b.d.LoggingFailureAnalysisReporter - [report,40] - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Web server failed to start. Port 8849 was already in use.
+
+Action:
+
+Identify and stop the process that's listening on port 8849 or configure this application to listen on another port.
+
+14:38:01.037 [main] ERROR o.s.b.d.LoggingFailureAnalysisReporter - [report,40] - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Web server failed to start. Port 8849 was already in use.
+
+Action:
+
+Identify and stop the process that's listening on port 8849 or configure this application to listen on another port.
+
+16:27:22.640 [boundedElastic-7] ERROR c.a.c.n.d.r.NacosReactiveDiscoveryClient - [lambda$getServices$3,94] - get services from nacos server fail,
+com.alibaba.nacos.api.exception.NacosException: java.util.concurrent.TimeoutException: Waited 3000 milliseconds (plus 3466 milliseconds, 765100 nanoseconds delay) but future completed as timeout expired
+	at com.alibaba.nacos.common.remote.client.grpc.GrpcConnection.request(GrpcConnection.java:78)
+	at com.alibaba.nacos.common.remote.client.RpcClient.request(RpcClient.java:641)
+	at com.alibaba.nacos.common.remote.client.RpcClient.request(RpcClient.java:619)
+	at com.alibaba.nacos.client.naming.remote.gprc.NamingGrpcClientProxy.requestToServer(NamingGrpcClientProxy.java:356)
+	at com.alibaba.nacos.client.naming.remote.gprc.NamingGrpcClientProxy.getServiceList(NamingGrpcClientProxy.java:282)
+	at com.alibaba.nacos.client.naming.remote.NamingClientProxyDelegate.getServiceList(NamingClientProxyDelegate.java:162)
+	at com.alibaba.nacos.client.naming.NacosNamingService.getServicesOfServer(NacosNamingService.java:461)
+	at com.alibaba.nacos.client.naming.NacosNamingService.getServicesOfServer(NacosNamingService.java:449)
+	at com.alibaba.cloud.nacos.discovery.NacosServiceDiscovery.getServices(NacosServiceDiscovery.java:70)
+	at com.alibaba.cloud.nacos.discovery.reactive.NacosReactiveDiscoveryClient.lambda$getServices$3(NacosReactiveDiscoveryClient.java:87)
+	at reactor.core.publisher.FluxDefer.subscribe(FluxDefer.java:46)
+	at reactor.core.publisher.FluxSubscribeOn$SubscribeOnSubscriber.run(FluxSubscribeOn.java:194)
+	at reactor.core.scheduler.WorkerTask.call(WorkerTask.java:84)
+	at reactor.core.scheduler.WorkerTask.call(WorkerTask.java:37)
+	at java.util.concurrent.FutureTask.run$$$capture(FutureTask.java:266)
+	at java.util.concurrent.FutureTask.run(FutureTask.java)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$201(ScheduledThreadPoolExecutor.java:180)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:293)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: java.util.concurrent.TimeoutException: Waited 3000 milliseconds (plus 3466 milliseconds, 765100 nanoseconds delay) but future completed as timeout expired
+	at com.alibaba.nacos.shaded.com.google.common.util.concurrent.AbstractFuture.get(AbstractFuture.java:506)
+	at com.alibaba.nacos.common.remote.client.grpc.GrpcConnection.request(GrpcConnection.java:76)
+	... 20 common frames omitted
+16:35:07.429 [reactor-http-nio-4] ERROR c.c.g.h.GatewayExceptionHandler - [handle,52] - [网关异常处理]请求路径:/code,异常信息:Invalid value 'com.ruoyi.gateway.config.KaptchaTextCreator' for config parameter 'kaptcha.textproducer.impl'.
+16:54:20.826 [reactor-http-nio-2] ERROR c.c.g.h.GatewayExceptionHandler - [handle,52] - [网关异常处理]请求路径:/code1,异常信息:404 NOT_FOUND
+16:55:31.325 [reactor-http-nio-3] ERROR c.c.g.h.GatewayExceptionHandler - [handle,52] - [网关异常处理]请求路径:/code1,异常信息:404 NOT_FOUND
+16:55:31.933 [reactor-http-nio-4] ERROR c.c.g.h.GatewayExceptionHandler - [handle,52] - [网关异常处理]请求路径:/code1,异常信息:404 NOT_FOUND
+16:55:32.586 [reactor-http-nio-5] ERROR c.c.g.h.GatewayExceptionHandler - [handle,52] - [网关异常处理]请求路径:/code1,异常信息:404 NOT_FOUND
+16:55:33.426 [reactor-http-nio-6] ERROR c.c.g.h.GatewayExceptionHandler - [handle,52] - [网关异常处理]请求路径:/code1,异常信息:404 NOT_FOUND
+16:55:34.339 [reactor-http-nio-7] ERROR c.c.g.h.GatewayExceptionHandler - [handle,52] - [网关异常处理]请求路径:/code1,异常信息:404 NOT_FOUND
+16:57:04.201 [reactor-http-nio-8] ERROR c.c.g.h.GatewayExceptionHandler - [handle,52] - [网关异常处理]请求路径:/code1,异常信息:404 NOT_FOUND
+17:16:36.916 [boundedElastic-11] ERROR c.c.g.h.GatewayExceptionHandler - [handle,52] - [网关异常处理]请求路径:/schedule/job/list,异常信息:503 SERVICE_UNAVAILABLE "Unable to find instance for ruoyi-job"

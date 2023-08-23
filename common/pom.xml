@@ -3,29 +3,27 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <parent>
-        <groupId>com.copysun.root</groupId>
+        <groupId>com.copysun</groupId>
         <artifactId>springcloud-study</artifactId>
-        <version>0.0.1-SNAPSHOT</version>
+        <version>1.0.0-SNAPSHOT</version>
     </parent>
-    <groupId>com.copysun</groupId>
-    <artifactId>common</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
-    <name>common</name>
-    <description>common</description>
 
-    <dependencies>
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-websocket</artifactId>
-        </dependency>
-    </dependencies>
-    <build>
-        <plugins>
-            <plugin>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-maven-plugin</artifactId>
-            </plugin>
-        </plugins>
-    </build>
+    <artifactId>common</artifactId>
+
+    <name>common</name>
+    <description>common通用模块</description>
+    <packaging>pom</packaging>
+
+    <modules>
+        <module>common-log</module>
+        <module>common-core</module>
+        <module>common-redis</module>
+        <module>common-seata</module>
+        <module>common-swagger</module>
+        <module>common-security</module>
+        <module>common-datascope</module>
+        <module>common-datasource</module>
+    </modules>
+
 
 </project>

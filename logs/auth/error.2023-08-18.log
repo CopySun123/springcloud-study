@@ -1,0 +1,90 @@
+16:03:51.787 [main] ERROR o.s.b.d.LoggingFailureAnalysisReporter - [report,40] - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Field remoteUserService in com.copysun.auth.service.SysLoginService required a bean of type 'com.copysun.system.api.RemoteUserService' that could not be found.
+
+The injection point has the following annotations:
+	- @org.springframework.beans.factory.annotation.Autowired(required=true)
+
+
+Action:
+
+Consider defining a bean of type 'com.copysun.system.api.RemoteUserService' in your configuration.
+
+16:05:35.317 [main] ERROR o.s.b.d.LoggingFailureAnalysisReporter - [report,40] - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Field remoteUserService in com.copysun.auth.service.SysLoginService required a bean of type 'com.copysun.system.api.RemoteUserService' that could not be found.
+
+The injection point has the following annotations:
+	- @org.springframework.beans.factory.annotation.Autowired(required=true)
+
+
+Action:
+
+Consider defining a bean of type 'com.copysun.system.api.RemoteUserService' in your configuration.
+
+16:09:30.991 [main] ERROR o.s.b.d.LoggingFailureAnalysisReporter - [report,40] - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Field sysLoginService in com.copysun.auth.controller.TokenController required a bean of type 'com.copysun.system.api.RemoteUserService' that could not be found.
+
+The injection point has the following annotations:
+	- @org.springframework.beans.factory.annotation.Autowired(required=true)
+
+
+Action:
+
+Consider defining a bean of type 'com.copysun.system.api.RemoteUserService' in your configuration.
+
+16:13:58.966 [main] ERROR o.s.b.d.LoggingFailureAnalysisReporter - [report,40] - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Field sysLoginService in com.copysun.auth.controller.TokenController required a bean of type 'com.copysun.system.api.RemoteUserService' that could not be found.
+
+The injection point has the following annotations:
+	- @org.springframework.beans.factory.annotation.Autowired(required=true)
+
+
+Action:
+
+Consider defining a bean of type 'com.copysun.system.api.RemoteUserService' in your configuration.
+
+17:32:26.580 [main] ERROR o.s.b.d.LoggingFailureAnalysisReporter - [report,40] - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Field sysLoginService in com.copysun.auth.controller.TokenController required a bean of type 'com.copysun.system.api.RemoteUserService' that could not be found.
+
+The injection point has the following annotations:
+	- @org.springframework.beans.factory.annotation.Autowired(required=true)
+
+
+Action:
+
+Consider defining a bean of type 'com.copysun.system.api.RemoteUserService' in your configuration.
+
